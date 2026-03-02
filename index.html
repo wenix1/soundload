@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1 class="fade-in">Music<span>Hub</span></h1>
+    <div class="theme-switcher">
+      <button data-theme="orange">🟠</button>
+      <button data-theme="purple">🟣</button>
+      <button data-theme="white">⚪</button>
+      <button data-theme="green">🟢</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Start Screen -->
+    <div id="startScreen" class="card start-card fade-in">
+      <h2>Welcome!</h2>
+      <p>Click “Start” to begin</p>
+      <button id="startBtn">Start / Почати роботу</button>
+    </div>
+
+    <!-- Service Selection -->
+    <div id="serviceSelect" class="card hidden fade-in">
+      <h2>Choose your service</h2>
+      <div class="service-cards">
+        <div id="scCard" class="service-card glow-card">
+          <h3>SoundCloud</h3>
+          <p>Liked tracks, playlists</p>
+        </div>
+        <div id="spotifyCard" class="service-card glow-card">
+          <h3>Spotify</h3>
+          <p>Recommended playlists, top tracks</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SoundCloud Features -->
+    <div id="scFeatures" class="card hidden fade-in">
+      <h2>SoundCloud Features</h2>
+      <ul id="scList">
+        <li>Liked Tracks Playlist</li>
+        <li>Top Tracks</li>
+        <li>Share Links</li>
+      </ul>
+      <button id="backToServices1">Back</button>
+    </div>
+
+    <!-- Spotify Features -->
+    <div id="spotifyFeatures" class="card hidden fade-in">
+      <h2>Spotify Features</h2>
+      <ul id="spList">
+        <li>Recommended Playlists</li>
+        <li>Top Tracks</li>
+        <li>Genres / Mood</li>
+      </ul>
+      <button id="backToServices2">Back</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Music Hub • Demo • Neon Glow</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html><!-- SoundCloud Features -->
+<div id="scFeatures" class="card hidden fade-in">
+  <h2>SoundCloud Features</h2>
+  <ul id="scList">
+    <li>Liked Tracks Playlist</li>
+    <li>Top Tracks</li>
+    <li>Share Links</li>
+  </ul>
+  <button id="backToServices1" class="back-btn">⬅ Back</button>
+</div>
+
+<!-- Spotify Features -->
+<div id="spotifyFeatures" class="card hidden fade-in">
+  <h2>Spotify Features</h2>
+  <ul id="spList">
+    <li>Recommended Playlists</li>
+    <li>Top Tracks</li>
+    <li>Genres / Mood</li>
+  </ul>
+  <button id="backToServices2" class="back-btn">⬅ Back</button>
+</div>

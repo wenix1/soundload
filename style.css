@@ -1,0 +1,136 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family: monospace; }
+body { background:#0b0f14; color:#e6e6e6; min-height:100vh; display:flex; flex-direction:column; transition:all 0.3s ease; }
+header { padding:20px 30px; display:flex; justify-content:space-between; align-items:center; }
+header h1 { font-size:32px; }
+header span { color:#00ff9c; }
+.theme-switcher button { margin-left:5px; padding:5px 10px; border:none; border-radius:50%; cursor:pointer; font-size:16px; text-shadow:0 0 4px #fff; box-shadow:0 0 15px #00ff9c; transition:all 0.3s ease; }
+.theme-switcher button:hover { transform: scale(1.2); }
+
+main { flex:1; display:flex; justify-content:center; align-items:center; padding:10px; flex-direction:column; }
+
+.card { background:#121826; padding:30px; border-radius:12px; width:320px; max-width:90%; text-align:center; box-shadow:0 0 35px rgba(0,255,156,0.3); transition:all 0.3s ease; margin-bottom:20px; opacity:0; transform:translateY(20px); }
+.card.fade-in { animation:fadeDown 0.6s forwards; }
+.card:hover { box-shadow:0 0 60px rgba(0,255,156,0.5); }
+
+button { margin-top:15px; width:100%; padding:12px; background:#00ff9c; border:none; border-radius:6px; cursor:pointer; font-weight:bold; color:#0b0f14; text-shadow:0 0 6px #00ff9c; box-shadow:0 0 20px #00ff9c; transition:all 0.3s ease; }
+button:hover:not(:disabled) { transform:scale(1.05); box-shadow:0 0 35px currentColor,0 0 60px currentColor; }
+button:active:not(:disabled) { transform:scale(0.95); }
+
+.hidden { display:none; }
+
+ul { text-align:left; margin-top:10px; }
+li { margin:6px 0; }
+
+.service-cards { display:flex; gap:20px; justify-content:center; margin-top:15px; flex-wrap:wrap; }
+.service-card { padding:20px; border-radius:12px; width:140px; cursor:pointer; transition:all 0.3s ease; text-align:center; box-shadow:0 0 20px #00ff9c; }
+.service-card:hover { transform:scale(1.05); box-shadow:0 0 40px #00ff9c, 0 0 60px #00ff9c; }
+
+.glow-card { text-shadow:0 0 4px #00ff9c; }
+
+footer { text-align:center; padding:15px; font-size:12px; opacity:0.5; }
+
+/* ====== Теми ====== */
+body.theme-orange { background:#ff5500; color:#fff; }
+body.theme-orange .card { box-shadow:0 0 50px #ff8800; }
+body.theme-orange button { color:#fff; text-shadow:0 0 6px #ff8800; box-shadow:0 0 25px #ff8800; }
+body.theme-purple { background:#5e00ff; color:#fff; }
+body.theme-purple .card { box-shadow:0 0 50px #aa55ff; }
+body.theme-purple button { color:#fff; text-shadow:0 0 6px #aa55ff; box-shadow:0 0 25px #aa55ff; }
+body.theme-white { background:#f5f5f5; color:#0b0f14; }
+body.theme-white .card { box-shadow:0 0 50px #999; }
+body.theme-white button { color:#0b0f14; text-shadow:0 0 4px #999; box-shadow:0 0 25px #999; }
+body.theme-green { background:#00aa33; color:#fff; }
+body.theme-green .card { box-shadow:0 0 50px #33ff77; }
+body.theme-green button { color:#fff; text-shadow:0 0 6px #33ff77; box-shadow:0 0 25px #33ff77; }
+
+/* ====== Анімації ====== */
+@keyframes fadeDown { to { opacity:1; transform:translateY(0); } }
+
+/* ====== Адаптив ====== */
+@media(max-width:600px){
+  header h1{font-size:24px;}
+  .card{padding:20px;}
+  button{padding:10px;}
+  .theme-switcher{display:flex; justify-content:flex-end;}
+  .service-cards{flex-direction:column; align-items:center;}
+}.back-btn {
+  margin-top:20px;
+  background: #ff5500; /* або інший колір glow залежно від теми */
+  color:#fff;
+  text-shadow:0 0 6px #ff8800;
+  box-shadow:0 0 20px #ff8800;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+  box-shadow:0 0 35px #ff8800, 0 0 60px #ff8800;
+}body.theme-orange { 
+  background:#0a0500; /* темний з відтінком */ 
+  color:#fff; 
+  --glow-color:#ff8800;
+}
+
+body.theme-purple { 
+  background:#0a001a; 
+  color:#fff; 
+  --glow-color:#aa55ff;
+}
+
+body.theme-white { 
+  background:#1a1a1a; 
+  color:#f5f5f5; 
+  --glow-color:#999999;
+}
+
+body.theme-green { 
+  background:#001a0a; 
+  color:#fff; 
+  --glow-color:#33ff77;
+}
+
+/* Використовуємо змінну --glow-color для всіх glow-елементів */
+button, .service-card, .card, .back-btn {
+  box-shadow:0 0 20px var(--glow-color),0 0 40px var(--glow-color);
+  text-shadow:0 0 6px var(--glow-color);
+  transition: all 0.3s ease;
+}
+
+button:hover, .service-card:hover {
+  transform: scale(1.05);
+  box-shadow:0 0 40px var(--glow-color),0 0 60px var(--glow-color);
+}body.theme-orange { --glow-color: #ff8800; background:#0a0500; color:#fff; }
+body.theme-purple { --glow-color: #aa55ff; background:#0a001a; color:#fff; }
+body.theme-white  { --glow-color: #999999; background:#1a1a1a; color:#f5f5f5; }
+body.theme-green  { --glow-color: #33ff77; background:#001a0a; color:#fff; }button, .service-card, .card, .back-btn {
+  box-shadow:0 0 20px var(--glow-color), 0 0 40px var(--glow-color);
+  text-shadow:0 0 6px var(--glow-color);
+  transition: all 0.3s ease;
+}
+
+button:hover, .service-card:hover {
+  transform: scale(1.05);
+  box-shadow:0 0 40px var(--glow-color), 0 0 60px var(--glow-color);
+}/* Кольори для кнопок через змінну */
+body.theme-orange { --btn-bg: #ff5500; --btn-text: #fff; --glow-color:#ff8800; }
+body.theme-purple { --btn-bg: #5e00ff; --btn-text: #fff; --glow-color:#aa55ff; }
+body.theme-white  { --btn-bg: #f5f5f5; --btn-text: #0b0f14; --glow-color:#999999; }
+body.theme-green  { --btn-bg: #00aa33; --btn-text: #fff; --glow-color:#33ff77; }
+
+/* Кнопки повністю через змінні */
+button, .back-btn {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  text-shadow:0 0 6px var(--glow-color);
+  box-shadow:0 0 20px var(--glow-color), 0 0 40px var(--glow-color);
+  border:none;
+  border-radius:6px;
+  padding:12px;
+  cursor:pointer;
+  font-weight:bold;
+  transition: all 0.3s ease;
+}
+
+button:hover, .back-btn:hover {
+  transform: scale(1.05);
+  box-shadow:0 0 40px var(--glow-color),0 0 60px var(--glow-color);
+}
